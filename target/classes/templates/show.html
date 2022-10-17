@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http:www.w3.org/1999/xhtml" xmlns:th="http:www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<title>Bootstrap Example</title>
+<title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=5">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<br>
+<br>
+<br>
+
+<h2 align="center">Employee details</h2>
+<div align="center">
+<table  class = "table table-bordered" style = "width:100%" >
+<thead>
+<tr> <th><h3>Id </h3></th>
+<th class="text-primary"><h3>Name</h3></th>
+<th class="text-primary"><h3>Salary</h3></th>
+<th class="text-primary"><h3>delete</h3></th>
+<th class="text-primary"><h3>update</h3></th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="emp:${abc}">
+<td  th:text="${emp.id}">Id</td>
+<td  th:text="${emp.name}">Name</td>
+<td  th:text="${emp.salary}">Salary</td>
+<td ><a  class="btn btn-primary" th:href="@{'edit'+${emp.id}}">update</a></td>
+<td ><a class="btn btn-danger" th:href="@{'/delete/'+${emp.id}}">remove</a></td>
+</tr>
+
+</tbody>
+
+
+
+</div>
+
+</table>
+<br>
+<br>
+
+<div class="text-center">
+<a   href="addData" class="btn btn-primary active"><h3>Add</h3></a>
+</div>
+</body>
+</html>
